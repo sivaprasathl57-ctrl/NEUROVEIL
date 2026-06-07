@@ -1,4 +1,4 @@
-# NEUROVEIL
+# 🧠🕸️⚖️ NEUROVEIL
 
 # AI-Powered Human-Supervised Cyber Investigation Platform
 
