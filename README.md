@@ -501,7 +501,6 @@ NEUROVEIL incorporates:
 NEUROVEIL is an evolving research and development project focused on exploring how Artificial Intelligence can augment cybercrime investigations while preserving human accountability, legal oversight, and ethical decision-making.
 
 ---
----
 ## Motto
 
 ### "See Beyond the Evidence. Reveal the Hidden Network."
@@ -545,10 +544,11 @@ AI Assistant:
 • Provide transaction references
 • Estimated Fraud Type:
   Investment Scam
+```
 ---
 
 🌍 Multi-Language Support
-
+```text
 Supports complaint filing in multiple languages.
 
 Examples:
@@ -564,9 +564,11 @@ Real-time language switching
 AI-powered translation
 Native language complaint support
 Multi-language investigation summaries
+```
 ---
-⚡ Instant Complaint Generation
 
+⚡ Instant Complaint Generation
+```text
 Users can instantly generate and download:
 
 Complaint PDF
@@ -575,9 +577,10 @@ Evidence Report
 Case Timeline
 Case Reference Document
 Available in a single click.
+```
 ---
 💾 Auto Save & Draft Recovery
-
+```text
 The platform automatically saves progress.
 
 Benefits:
@@ -586,9 +589,10 @@ Prevents data loss
 Draft recovery
 Resume complaint anytime
 Auto synchronization
+```
 ---
 📂 Smart Evidence Upload
-
+```text
 Supports:
 
 Screenshots
@@ -605,9 +609,10 @@ Transaction IDs
 Phone numbers
 URLs
 Wallet addresses
+```
 ---
 📊 Real-Time Complaint Tracking
-
+```text
 Users can track investigation progress in real time.
 
 Example Timeline:
@@ -638,9 +643,10 @@ Officer actions
 Approval status
 Recovery progress
 This creates complete transparency throughout the investigation lifecycle.
+```
 ---
 🔔 Smart Notifications
-
+```text
 Receive updates through:
 
 In-App Notifications
@@ -655,9 +661,10 @@ Investigation started
 Additional evidence requested
 Recovery update available
 Investigation completed
+```
 ---
 📈 Complaint Progress Dashboard
-
+```text
 Users can monitor:
 
 Case Status
@@ -667,9 +674,10 @@ Recovery Tracking
 Submitted Evidence
 Timeline Events
 All from a centralized dashboard.
+```
 ---
 🎨 Modern User Experience
-
+```text
 Designed with a professional and intuitive interface.
 
 Features:
@@ -682,9 +690,10 @@ Clean Dashboard
 Interactive Timelines
 Professional Investigation View
 Minimal Learning Curve
+```
 ---
 🔒 Privacy & Security
-
+```text
 User information is protected through:
 
 End-to-End Encryption
@@ -692,9 +701,10 @@ Secure Evidence Storage
 Role-Based Access Control
 Audit Logging
 Privacy Protection Measures
+```
 ---
 🎯 Citizen-Centric Design
-
+```text
 NEUROVEIL aims to provide a seamless experience where citizens can:
 
 ✔ Report cybercrime easily
@@ -706,7 +716,8 @@ NEUROVEIL aims to provide a seamless experience where citizens can:
 ✔ Access services in their preferred language
 ✔ Stay informed throughout the investigation process
 
-
+```
 The goal is to make cybercrime reporting as simple, transparent, and accessible as possible while empowering investigators with advanced AI capabilities.
-
-This section makes NEUROVEIL feel like a real-world government-grade cybercrime portal rather than just an AI investigation backend
+```text
+This section makes NEUROVEIL feel like a real-world government-grade cybercrime portal rather than just an AI investigation backend.
+```
