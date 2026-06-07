@@ -501,9 +501,213 @@ NEUROVEIL incorporates:
 NEUROVEIL is an evolving research and development project focused on exploring how Artificial Intelligence can augment cybercrime investigations while preserving human accountability, legal oversight, and ethical decision-making.
 
 ---
-
+---
 ## Motto
 
 ### "See Beyond the Evidence. Reveal the Hidden Network."
 
 **🧠🕵️🛡️NEUROVEIL — The Future of Human-Supervised Cyber Investigation.**
+
+---
+# 👤 Smart Citizen Complaint Portal
+
+NEUROVEIL is not only an investigation platform for officers — it also provides a modern, intelligent, and user-friendly complaint experience for citizens.
+
+The complaint portal is designed to make cybercrime reporting simple, accessible, transparent, and guided.
+
+---
+
+## ✨ Advanced User Features
+
+### 🤖 AI Complaint Assistant
+
+An intelligent AI assistant helps users throughout the complaint process.
+
+Features:
+
+- Guides users step-by-step while filing complaints
+- Suggests missing information
+- Explains what evidence should be uploaded
+- Helps identify scam categories
+- Answers complaint-related questions
+- Provides investigation updates
+- Recommends next actions for victims
+
+Example:
+
+```text
+User: I was scammed through a fake investment app.
+
+AI Assistant:
+• Upload transaction screenshots
+• Upload scam chat screenshots
+• Enter UPI ID used by scammer
+• Provide transaction references
+• Estimated Fraud Type:
+  Investment Scam
+
+🌍 Multi-Language Support
+Supports complaint filing in multiple languages.
+
+Examples:
+
+English
+
+Tamil
+
+Hindi
+
+Malayalam
+
+Features:
+
+Real-time language switching
+AI-powered translation
+Native language complaint support
+Multi-language investigation summaries
+
+⚡ Instant Complaint Generation
+
+Users can instantly generate and download:
+
+Complaint PDF
+Investigation Summary
+Evidence Report
+Case Timeline
+Case Reference Document
+Available in a single click.
+
+💾 Auto Save & Draft Recovery
+
+The platform automatically saves progress.
+
+Benefits:
+
+Prevents data loss
+Draft recovery
+Resume complaint anytime
+Auto synchronization
+
+📂 Smart Evidence Upload
+
+Supports:
+
+Screenshots
+Images
+PDFs
+Videos
+Voice recordings
+Chat exports
+Bank statements
+AI automatically extracts:
+UPI IDs
+Account numbers
+Transaction IDs
+Phone numbers
+URLs
+Wallet addresses
+
+📊 Real-Time Complaint Tracking
+
+Users can track investigation progress in real time.
+
+Example Timeline:
+
+📝 Complaint Submitted
+       ↓
+🔍 Evidence Processing
+       ↓
+🧠 AI Investigation Started
+       ↓
+👮 Assigned to Officer
+       ↓
+📑 Investigation Ongoing
+       ↓
+⚖️ Review Process
+       ↓
+✅ Investigation Completed
+
+👮 Investigation Transparency
+
+Users can view:
+
+Current case status
+Assigned investigator
+Investigation stage
+Case updates
+Officer actions
+Approval status
+Recovery progress
+This creates complete transparency throughout the investigation lifecycle.
+
+🔔 Smart Notifications
+
+Receive updates through:
+
+In-App Notifications
+Email Alerts
+SMS Notifications
+Push Notifications
+
+Examples:
+
+Case accepted
+Investigation started
+Additional evidence requested
+Recovery update available
+Investigation completed
+
+📈 Complaint Progress Dashboard
+
+Users can monitor:
+
+Case Status
+Risk Assessment
+Investigation Progress
+Recovery Tracking
+Submitted Evidence
+Timeline Events
+All from a centralized dashboard.
+
+🎨 Modern User Experience
+
+Designed with a professional and intuitive interface.
+
+Features:
+
+Responsive Desig
+Mobile Friendly
+Dark Mode
+Accessibility Support
+Clean Dashboard
+Interactive Timelines
+Professional Investigation View
+Minimal Learning Curve
+
+🔒 Privacy & Security
+
+User information is protected through:
+
+End-to-End Encryption
+Secure Evidence Storage
+Role-Based Access Control
+Audit Logging
+Privacy Protection Measures
+
+🎯 Citizen-Centric Design
+
+NEUROVEIL aims to provide a seamless experience where citizens can:
+
+✔ Report cybercrime easily
+✔ Track investigations transparently
+✔ Receive real-time updates
+✔ Interact with in AI assistant
+✔ Upload evidence securely
+✔ Download complaint reports instantly
+✔ Access services in their preferred language
+✔ Stay informed throughout the investigation process
+
+
+The goal is to make cybercrime reporting as simple, transparent, and accessible as possible while empowering investigators with advanced AI capabilities.
+
+This section makes NEUROVEIL feel like a real-world government-grade cybercrime portal rather than just an AI investigation backend
