@@ -20,19 +20,16 @@ Modern cybercrime investigations often involve thousands of complaints, massive 
 
 NEUROVEIL addresses this challenge by combining:
 
-* Artificial Intelligence
-* Machine Learning
-* Digital Forensics
-* Graph Intelligence
-* Fraud Analytics
-* Human Authorization Workflows
+- 🧠 Artificial Intelligence
+- 🤖 Machine Learning
+- 🔬 Digital Forensics
+- 🕸️ Graph Intelligence
+- 🚨 Fraud Analytics
+- 👨‍⚖️ Human Authorization Workflows
 
-into a single investigation ecosystem capable of assisting investigators from complaint intake to evidence generation.
-
-The platform does not simply store complaints.
-
-It actively investigates them.
-
+> 📌 The platform does not simply store complaints.
+>
+> 🔎 It actively investigates them.
 ---
 
 ## The Problem
@@ -41,27 +38,26 @@ Cybercrime investigations are becoming increasingly complex.
 
 Investigators must analyze:
 
-* Fraudulent bank transactions
-* UPI payment trails
-* Crypto transfers
-* Scam websites
-* Fake investment platforms
-* Social media scams
-* Telegram fraud groups
-* Phishing campaigns
-* Identity theft incidents
-* Digital evidence
+- 💳 Fraudulent bank transactions
+- 📲 UPI payment trails
+- 🪙 Crypto transfers
+- 🌐 Scam websites
+- 📈 Fake investment platforms
+- 📱 Social media scams
+- 💬 Telegram fraud groups
+- 🎣 Phishing campaigns
+- 🪪 Identity theft incidents
+- 📂 Digital evidence
 
 A single scam operation may involve:
 
 ```text
-50+ Victims
-20+ Bank Accounts
-10+ UPI IDs
-Multiple Devices
-Several Wallets
-Numerous Fake Identities
-```
+👥 50+ Victims
+🏦 20+ Bank Accounts
+📲 10+ UPI IDs
+💻 Multiple Devices
+🪙 Several Wallets
+🎭 Numerous Fake Identities
 
 Manually connecting these relationships requires significant time and resources.
 
