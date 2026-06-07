@@ -83,15 +83,14 @@ The AI should investigate similarly to how an experienced cyber investigator thi
 
 It should:
 
-* Analyze evidence
-* Correlate clues
-* Build timelines
-* Detect relationships
-* Trace transactions
-* Identify patterns
-* Generate hypotheses
-* Explain findings
-
+🔍 Analyze evidence
+🔗 Correlate clues
+📅 Build timelines
+🕸️ Detect relationships
+💸 Trace transactions
+📊 Identify patterns
+💡 Generate hypotheses
+📜 Explain findings
 ---
 
 ## 2. Human Authorization
@@ -101,10 +100,13 @@ The AI never acts as a legal authority.
 Instead:
 
 ```text
-AI Investigates
-Human Reviews
-Human Approves
-AI Continues
+🤖 AI Investigates
+       ↓
+👨‍💼 Human Reviews
+       ↓
+👨‍⚖️ Human Approves
+       ↓
+🤖 AI Continues
 ```
 
 All legally sensitive actions remain under authorized human control.
@@ -117,12 +119,11 @@ Every investigation improves future investigations.
 
 The platform learns from:
 
-* Officer feedback
-* Investigation outcomes
-* False positives
-* Confirmed fraud cases
-* Recovery results
-
+👮 Officer feedback
+📂 Investigation outcomes
+❌ False positives
+✅ Confirmed fraud cases
+💰 Recovery results
 ---
 
 # How NEUROVEIL Works
@@ -131,16 +132,17 @@ The platform learns from:
 
 Victims submit:
 
-* Complaint details
-* Transaction IDs
-* Bank account information
-* UPI IDs
-* Screenshots
-* Emails
-* URLs
-* Voice recordings
-* Chat exports
-* Crypto wallet addresses
+📄 Complaint details
+🧾 Transaction IDs
+🏦 Bank account information
+📲 UPI IDs
+📸 Screenshots
+📧 Emails
+🌐 URLs
+🎙️ Voice recordings
+💬 Chat exports
+🪙 Crypto wallet addresses
+
 
 ---
 
@@ -155,11 +157,11 @@ Examples:
 From screenshots:
 
 ```text
-UPI ID
-Account Number
-Phone Number
-Transaction Reference
-Amount
+📲 UPI ID
+🏦 Account Number
+📞 Phone Number
+🧾 Transaction Reference
+💰 Amount
 ```
 
 ### NLP Intelligence
@@ -167,11 +169,11 @@ Amount
 From complaint narratives:
 
 ```text
-Scam Type
-Fraud Indicators
-Entities
-Relationships
-Intent
+🚨 Scam Type
+⚠️ Fraud Indicators
+👤 Entities
+🔗 Relationships
+🎯 Intent
 ```
 
 ### Metadata Analysis
@@ -179,10 +181,10 @@ Intent
 From uploaded files:
 
 ```text
-Timestamp
-Location Data
-Device Information
-File Origin
+🕒 Timestamp
+📍 Location Data
+💻 Device Information
+📁 File Origin
 ```
 
 ---
@@ -191,15 +193,15 @@ File Origin
 
 NEUROVEIL identifies:
 
-* Investment Fraud
-* Crypto Fraud
-* Loan Scam
-* Phishing Attack
-* Impersonation Scam
-* Sextortion
-* APK Malware Fraud
-* Business Email Compromise
-* Social Engineering Fraud
+📈 Investment Fraud
+🪙 Crypto Fraud
+💵 Loan Scam
+🎣 Phishing Attack
+🎭 Impersonation Scam
+⚠️ Sextortion
+📱 APK Malware Fraud
+📧 Business Email Compromise
+🧠 Social Engineering Fraud
 
 ---
 
@@ -212,15 +214,15 @@ The investigation engine begins autonomous analysis.
 Tracks:
 
 ```text
-Victim
- ↓
-Scam Account
- ↓
-Mule Account
- ↓
-Layering Accounts
- ↓
-Wallet
+👤 Victim
+      ↓
+🏦 Scam Account
+      ↓
+💰 Mule Account
+      ↓
+🔄 Layering Accounts
+      ↓
+🪙 Wallet
 ```
 
 ---
@@ -229,11 +231,11 @@ Wallet
 
 Analyzes:
 
-* Transaction timing
-* Device usage
-* Transfer patterns
-* Victim targeting methods
-* Scam scripts
+⏰ Transaction timing
+💻 Device usage
+💸 Transfer patterns
+🎯 Victim targeting methods
+📜 Scam scripts
 
 ---
 
@@ -241,10 +243,10 @@ Analyzes:
 
 Correlates:
 
-* IP addresses
-* Browser fingerprints
-* Device identifiers
-* Session behavior
+🌐 IP addresses
+🧬 Browser fingerprints
+💻 Device identifiers
+🔐 Session behavior
 
 ---
 
@@ -252,10 +254,10 @@ Correlates:
 
 Discovers:
 
-* Fraud rings
-* Criminal clusters
-* Shared infrastructure
-* Coordinated campaigns
+🚨 Fraud rings
+👥 Criminal clusters
+🌐 Shared infrastructure
+🔗 Coordinated campaigns
 
 ---
 
@@ -284,9 +286,9 @@ Freeze Account
 Actions:
 
 ```text
-[ APPROVE ]
-[ REJECT ]
-[ REQUEST MORE DATA ]
+✅ [ APPROVE ]
+❌ [ REJECT ]
+🔍 [ REQUEST MORE DATA ]
 ```
 
 ---
@@ -341,21 +343,21 @@ The system automatically builds investigation networks.
 Example:
 
 ```text
-Victim A
-    \
-Victim B ---> UPI ID ---> Mule Account
-    /
-Victim C
+👤 Victim A
+      \
+👤 Victim B ---> 📲 UPI ID ---> 💰 Mule Account
+      /
+👤 Victim C
 
-             |
-             v
+                    │
+                    ▼
 
-      Crypto Wallet
+              🪙 Crypto Wallet
 
-             |
-             v
+                    │
+                    ▼
 
-      Additional Accounts
+            🏦 Additional Accounts
 ```
 
 This allows investigators to discover hidden relationships that may not be visible through manual analysis.
@@ -368,11 +370,11 @@ After an authorized freeze action, NEUROVEIL continues investigating.
 
 The platform can:
 
-* Locate remaining balances
-* Trace beneficiary accounts
-* Detect laundering routes
-* Estimate recovery probability
-* Generate recovery intelligence reports
+💵 Locate remaining balances
+🏦 Trace beneficiary accounts
+🔄 Detect laundering routes
+📈 Estimate recovery probability
+📑 Generate recovery reports
 
 ---
 
@@ -383,74 +385,81 @@ The platform provides:
 ### Live Investigation Timeline
 
 ```text
-Complaint Received
-Evidence Processed
-Fraud Correlated
-Risk Assessed
-Recommendation Generated
-Approval Requested
-Investigation Continued
-Report Generated
+📝 Complaint Received
+      ↓
+🔬 Evidence Processed
+      ↓
+🕸️ Fraud Correlated
+      ↓
+📈 Risk Assessed
+      ↓
+📢 Recommendation Generated
+      ↓
+👨‍⚖️ Approval Requested
+      ↓
+🔎 Investigation Continued
+      ↓
+📑 Report Generated
 ```
 
 ### Investigation Intelligence
 
-* Fraud Networks
-* Victim Clusters
-* Device Intelligence
-* Transaction Trails
-* Risk Scores
-* Recovery Tracking
-* Approval Requests
+🚨 Fraud Networks
+👥 Victim Clusters
+💻 Device Intelligence
+💸 Transaction Trails
+📈 Risk Scores
+💰 Recovery Tracking
+👨‍⚖️ Approval Requests
 
 ---
 
 # Technology Stack
 
-## Backend
+##🖥️ Backend
 
 * Python
 * FastAPI
 
-## AI & Machine Learning
+##🧠  AI & Machine Learning
 
 * Scikit-Learn
 * PyTorch
 * Transformers
 * spaCy
 
-## Data Analytics
+##📊 Data Analytics
 
 * Pandas
 * NumPy
 
-## Graph Intelligence
+##🕸️ Graph Intelligence
 
 * Neo4j
 * NetworkX
 
-## Digital Forensics
+##🔬 Digital Forensics
 
 * OpenCV
 * Tesseract OCR
 
-## Data Storage
+##🗄️ Data Storage
 
 * PostgreSQL
 * MongoDB
 
-## Search & Intelligence
+## 🔎 Search & Intelligence
 
 * Elasticsearch
 
-## Streaming & Realtime
+##⚡ Streaming & Realtime
 
 * Kafka
 * Redis
 * Celery
 * WebSockets
 
-## Frontend
+##🎨 Frontend
 
 * React
 * JavaScript
@@ -459,31 +468,31 @@ Report Generated
 
 ---
 
-# Security & Compliance
+🔒 Security & Compliance
 
 NEUROVEIL incorporates:
 
-* Role-Based Access Control
-* Audit Logging
-* Chain of Custody Tracking
-* Evidence Integrity Verification
-* Approval Histories
-* Encryption Standards
-* Investigation Transparency
+🛡️ Role-Based Access Control
+📜 Audit Logging
+🔗 Chain of Custody Tracking
+✅ Evidence Integrity Verification
+📑 Approval Histories
+🔐 Encryption Standards
+👁️ Investigation Transparency
 
 ---
 
-# Future Roadmap
+🚀 Future Roadmap
 
-* Deepfake Detection
-* Voice Scam Intelligence
-* Crypto Asset Analytics
-* Dark Web Intelligence
-* Autonomous Fraud Correlation
-* Investigation Copilot
-* Cross-Case Intelligence Sharing
-* Advanced Financial Crime Analytics
-* National Cyber Intelligence Grid
+🎭 Deepfake Detection
+🎙️ Voice Scam Intelligence
+🪙 Crypto Asset Analytics
+🌑 Dark Web Intelligence
+🤖 Autonomous Fraud Correlation
+🧠 Investigation Copilot
+🔗 Cross-Case Intelligence Sharing
+📈 Financial Crime Analytics
+🌐 National Cyber Intelligence Grid
 
 ---
 
@@ -497,4 +506,4 @@ NEUROVEIL is an evolving research and development project focused on exploring h
 
 ### "See Beyond the Evidence. Reveal the Hidden Network."
 
-**NEUROVEIL — The Future of Human-Supervised Cyber Investigation.**
+**🧠🕵️🛡️NEUROVEIL — The Future of Human-Supervised Cyber Investigation.**
