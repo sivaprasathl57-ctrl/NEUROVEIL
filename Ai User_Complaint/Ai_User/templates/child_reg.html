@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women & Children Crime Complaint</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#031526;
+    color:white;
+    padding:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.form-box{
+    background:#081f36;
+    border:1px solid #173754;
+    border-radius:20px;
+    padding:35px;
+}
+
+h1{
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.subtitle{
+    color:#9fc0df;
+    margin-bottom:35px;
+}
+
+.section-title{
+    margin:30px 0 20px;
+    color:#ffb703;
+    font-size:24px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:500;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    background:#102b47;
+    border:1px solid #214665;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+.full{
+    grid-column:1 / -1;
+}
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.checkbox input{
+    width:20px;
+    height:20px;
+}
+
+.alert-box{
+    background:#5a1010;
+    border-left:5px solid red;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    color:#ffdede;
+}
+
+.btns{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+.submit-btn{
+    background:#ffb703;
+    color:black;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.reset-btn{
+    background:#16314d;
+    color:white;
+    border:1px solid #295072;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.note{
+    margin-top:25px;
+    color:#9fc0df;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:28px;
+    }
+}
+
+.flash-message{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #22c55e;
+    color: white;
+
+    padding: 15px 25px;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    z-index: 9999;
+
+    animation: showFlash 0.5s ease;
+}
+
+@keyframes showFlash{
+    from{
+        opacity:0;
+        transform:translateX(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+}
+
+</style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+{% if messages %}
+<div id="flashMessage" class="flash-message">
+    {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
+
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Women & Children Crime Complaint Form</h1>
+
+        <p class="subtitle">
+            Report online harassment, cyberbullying, stalking, sextortion, trafficking, child exploitation and related cyber crimes.
+        </p>
+
+        <div class="alert-box">
+            ⚠ Emergency cases involving immediate danger should also be reported to local police or call 112 immediately.
+        </div>
+
+        <form action="/women-children-complaint" method="POST">
+
+            <!-- PERSONAL DETAILS -->
+
+            <h2 class="section-title">Personal Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" name="mobile" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="input-group">
+                    <label>Gender</label>
+                    <select name="gender">
+                        <option>Female</option>
+                        <option>Male</option>
+                        <option>Child</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <input type="text" name="state">
+                </div>
+
+                <div class="input-group">
+                    <label>District</label>
+                    <input type="text" name="district">
+                </div>
+
+            </div>
+
+            <!-- INCIDENT DETAILS -->
+
+            <h2 class="section-title">Incident Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Crime Type</label>
+
+                    <select name="crime_type">
+
+                        <option>Cyberbullying</option>
+                        <option>Online Harassment</option>
+                        <option>Cyber Stalking</option>
+                        <option>Sextortion</option>
+                        <option>Fake Profile</option>
+                        <option>Child Exploitation</option>
+                        <option>Human Trafficking</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Incident Date</label>
+                    <input type="date" name="incident_date">
+                </div>
+
+                <div class="input-group">
+                    <label>Platform Used</label>
+
+                    <select name="platform">
+
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>WhatsApp</option>
+                        <option>Telegram</option>
+                        <option>Snapchat</option>
+                        <option>Twitter / X</option>
+                        <option>YouTube</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Suspect Profile Link</label>
+                    <input type="url" name="profile_link">
+                </div>
+
+                <div class="input-group">
+                    <label>Victim Age</label>
+                    <input type="number" name="victim_age">
+                </div>
+
+                <div class="input-group">
+                    <label>Emergency Protection Needed?</label>
+
+                    <select name="emergency">
+
+                        <option>No</option>
+                        <option>Yes</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group full">
+                    <label>Incident Description</label>
+
+                    <textarea
+                        rows="7"
+                        name="description"
+                        placeholder="Explain the cyber crime incident in detail..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- EVIDENCE -->
+
+            <h2 class="section-title">Evidence Upload</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Upload Screenshots</label>
+                    <input type="file" name="screenshots">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Chat / Media Files</label>
+                    <input type="file" name="media">
+                </div>
+
+            </div>
+
+            <!-- OPTIONS -->
+
+            <div class="checkbox">
+
+                <input type="checkbox" name="anonymous" required>
+
+                <label>Submit Complaint Anonymously</label>
+
+            </div>
+
+            <div class="checkbox">
+
+                <input type="checkbox" required>
+
+                <label>
+                    I confirm that the information provided is true and accurate.
+                </label>
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="btns">
+
+                <button type="submit" class="submit-btn">
+                    Submit Complaint
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Reset Form
+                </button>
+
+            </div>
+
+            <p class="note">
+                🔒 Your information is securely protected and handled confidentially.
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+<script>
+
+setTimeout(() => {
+
+    const flash = document.getElementById("flashMessage");
+
+    if(flash){
+        flash.style.display = "none";
+    }
+
+}, 3000);
+
+</script>
+</body>
+</html>

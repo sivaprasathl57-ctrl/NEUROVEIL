@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Bullying & Harassment Complaint</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='cyber_bullying.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-container">
+
+        <h1>🛑 Cyber Bullying & Harassment Complaint</h1>
+
+        <p class="subtitle">
+            Report online harassment, threats, cyber stalking,
+            blackmail, abusive messages and social media bullying.
+        </p>
+
+        <div class="alert-box">
+            ⚠ Save screenshots, chats, emails and profile links as evidence.
+        </div>
+
+        <form action="/cyber_bullying" method="POST" enctype="multipart/form-data">
+
+            <!-- USER DETAILS -->
+
+            <h2 class="section-title">Victim Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="text" name="mobile" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <input type="text" name="state">
+                </div>
+
+            </div>
+
+            <!-- INCIDENT DETAILS -->
+
+            <h2 class="section-title">Harassment Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Harassment Type</label>
+
+                    <select name="harassment_type">
+
+                        <option>Cyber Bullying</option>
+                        <option>Online Threat</option>
+                        <option>Blackmail</option>
+                        <option>Cyber Stalking</option>
+                        <option>Fake Profile</option>
+                        <option>Abusive Messages</option>
+                        <option>Defamation</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Platform Name</label>
+
+                    <select name="platform">
+
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>WhatsApp</option>
+                        <option>Telegram</option>
+                        <option>Twitter / X</option>
+                        <option>YouTube</option>
+                        <option>Snapchat</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Suspect Profile Link</label>
+                    <input type="url" name="profile_link">
+                </div>
+
+                <div class="input-group">
+                    <label>Suspect Mobile Number</label>
+                    <input type="text" name="suspect_mobile">
+                </div>
+
+                <div class="input-group">
+                    <label>Incident Date</label>
+                    <input type="date" name="incident_date">
+                </div>
+
+                <div class="input-group">
+                    <label>Threat Level</label>
+
+                    <select name="threat_level">
+
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                        <option>Critical</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group full">
+                    <label>Complaint Description</label>
+
+                    <textarea
+                        rows="7"
+                        name="description"
+                        placeholder="Describe the cyber bullying or harassment incident..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- EVIDENCE -->
+
+            <h2 class="section-title">Evidence Upload</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Upload Screenshot</label>
+                    <input type="file" name="screenshot">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Chat Proof</label>
+                    <input type="file" name="chat_proof">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Audio / Video Evidence</label>
+                    <input type="file" name="media_proof">
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

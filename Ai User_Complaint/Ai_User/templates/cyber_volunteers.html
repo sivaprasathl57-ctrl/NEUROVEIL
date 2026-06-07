@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Volunteers</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='cyber_volunteers.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+        <div id="flashMessage" class="flash-message">
+            {{ messages[0] }}
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<header>
+    <h1>Cyber Volunteers Program</h1>
+    <p>Join hands to fight cyber crime</p>
+</header>
+
+<section class="intro">
+    <h2>Who are Cyber Volunteers?</h2>
+    <p>Cyber Volunteers help in identifying, reporting and spreading awareness about cyber crimes.</p>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <h3>🛡️ Report Threats</h3>
+        <p>Identify fake websites, phishing links and scams.</p>
+    </div>
+
+    <div class="card">
+        <h3>📢 Awareness</h3>
+        <p>Educate people about cyber safety practices.</p>
+    </div>
+
+    <div class="card">
+        <h3>🤝 Community Help</h3>
+        <p>Support victims and guide them.</p>
+    </div>
+</section>
+
+<section class="join">
+    <h2>Become a Volunteer</h2>
+    <form action = "/Volunteers" method = "POST">
+        <input type="text" name = "fullname" placeholder="Full Name" required>
+        <input type="email" name = "email" placeholder="Email" required>
+        <input type="text" name = "skill" placeholder="Skills (Optional)">
+        <button type="submit">Join Now</button>
+    </form>
+</section>
+<script>
+
+setTimeout(() => {
+
+    const flash = document.getElementById("flashMessage");
+
+    if(flash){
+        flash.style.display = "none";
+    }
+
+}, 3000);
+
+</script>
+</body>
+</html>

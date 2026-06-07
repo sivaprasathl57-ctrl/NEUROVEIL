@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#061726;
+    color:white;
+    padding:30px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.form-box{
+    background:#0c2138;
+    border:1px solid #1c4266;
+    border-radius:20px;
+    padding:35px;
+}
+
+h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#9eb8d2;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+.input-group input,
+.input-group textarea{
+    background:#102b47;
+    border:1px solid #244b6d;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.btn{
+    margin-top:30px;
+    background:linear-gradient(135deg,#ff9800,#ff6b00);
+    border:none;
+    color:white;
+    padding:15px 30px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+.flash-message{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #22c55e;
+    color: white;
+
+    padding: 15px 25px;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    z-index: 9999;
+
+    animation: showFlash 0.5s ease;
+}
+
+@keyframes showFlash{
+    from{
+        opacity:0;
+        transform:translateX(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+

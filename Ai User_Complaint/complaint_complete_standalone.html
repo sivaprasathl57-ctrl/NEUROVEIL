@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Standalone Complaint Test</title>
+  <link rel="stylesheet" href="Ai_User/static/complaint.css">
+  <style>
+    body { background: white; padding: 20px; font-family: Arial; }
+    .app-shell { max-width: none; }
+    .test-info { background: #e3f2fd; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="test-info">
+    <h2>🔧 COMPLETE Standalone Complaint Form Test</h2>
+    <p><strong>F12 → Console</strong> | Fill <strong>ALL</strong> required + add transaction + declaration → Submit</p>
+    <ul>
+      <li>Required: Victim name, 10-digit phone, title, category, date/time, description, <strong>1+ transaction</strong>, declaration ✓</li>
+      <li>See "handleSubmit called" → validation → "Submitting form" logs</li>
+      <li>Spinner shows → form ready for backend</li>
+      <li>Alert confirms submit works</li>
+    </ul>
+  </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Test Complaint Registration</h1>
+        <p class="subtitle">Full form test - no server needed</p>
+      </div>
+      <div class="top-actions">
+        <div id="saveStatus" class="save-status">Test mode</div>
+      </div>
+    </header>
+
+    <main class="main-card">
+      <form id="complaintForm" method="POST" action="#" enctype="multipart/form-data" novalidate>
+        <!-- Victim Details -->
+        <section class="section-card">
+          <div class="section-head">
+            <h2>Victim Details</h2>
+            <p class="section-note">Required fields marked automatically</p>
+          </div>
+          <div class="grid two-col">
+            <div class="form-group">
+              <label for="victimName">Victim Full Name <span style="color:red">*</span></label>
+              <input type="text" id="victimName" name="victimName" required />
+            </div>
+            <div class="form-group">
+              <label for="victimPhone">Victim Phone <span style="color:red">*</span></label>
+              <input type="tel" id="victimPhone" name="victimPhone" placeholder="10-digit" required />
+            </div>
+            <div class="form-group">
+              <label for="victimEmail">Email</label>
+              <input type="email" id="victimEmail" name="victimEmail" />
+            </div>
+            <div class="form-group full">
+              <label for="victimAddress">Address</label>
+              <textarea id="victimAddress" name="victimAddress" rows="3"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Incident Details -->
+        <section class="section-card">
+          <div class="section-head">
+            <h2>Incident Details <span style="color:red">*</span></h2>
+          </div>
+          <div class="grid two-col">
+            <div class="form-group">
+              <label for="complaintTitle">Complaint Title <span style="color:red">*</span></label>
+              <input type="text" id="complaintTitle" name="complaintTitle" required />
+            </div>
+            <div class="form-group">
+              <label for="crimeCategory">Crime Category <span style="color:red">*</span></label>
+              <select id="crimeCategory" name="crimeCategory" required>
+                <option value="">Select</option>
+                <option value="UPI Fraud">UPI Fraud</option>
+                <option value="Bank Fraud">Bank Fraud</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="incidentDate">Date <span style="color:red">*</span></label>
+              <input type="date" id="incidentDate" name="incidentDate" required />
+            </div>
+            <div class="form-group">
+              <label for="incidentTime">Time <span style="color:red">*</span></label>
+              <input type="time" id="incidentTime" name="incidentTime" required />
+            </div>
+            <div class="form-group full">
+              <label for="incidentDescription">Description <span style="color:red">*</span></label>
+              <textarea id="incidentDescription" name="incidentDescription" rows="5" required></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="suspectDetails">Suspect Details</label>
+              <textarea id="suspectDetails" name="suspectDetails" rows="4"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transactions -->
+        <section class="section-card">
+          <div class="section-head space-between">
+            <div>
+              <h2>Transactions <span style="color:red">*</span> (Add at least 1)</h2>
+            </div>
+            <button type="button" id="addTransactionBtn" class="btn btn-primary">+ Add Transaction</button>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="transactionTable">
+              <thead><tr><th>#</th><th>ID</th><th>Date</th><th>Time</th><th>Amount</th><th>Action</th></tr></thead>
+              <tbody id="transactionTableBody"></tbody>
+            </table>
+          </div>
+          <div class="totals-bar">
+            <div><strong>Total:</strong> ₹ <span id="totalAmount">0</span></div>
+          </div>
+        </section>
+
+        <!-- Evidence (optional) -->
+        <section class="section-card">
+          <div class="section-head">
+            <h2>Evidence (Optional)</h2>
+          </div>
+          <button type="button" id="addEvidenceBtn" class="btn btn-primary">+ Add Evidence</button>
+          <div class="table-wrap">
+            <table class="data-table" id="evidenceTable">
+              <thead><tr><th>#</th><th>Type</th><th>Desc</th><th>File</th><th>Action</th></tr></thead>
+              <tbody id="evidenceTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Declaration -->
+        <section class="section-card">
+          <label class="check-row">
+            <input type="checkbox" id="declaration" name="declaration" />
+            <span style="color:red">* </span>I confirm details are true <span style="color:red">*</span>
+          </label>
+        </section>
+
+        <!-- Submit -->
+        <section class="form-actions">
+          <button type="button" id="resetFormBtn" class="btn btn-secondary">Reset</button>
+          <div class="submit-area">
+            <button type="submit" class="btn btn-submit" id="submitBtn">
+              <span class="btn-text">TEST SUBMIT</span>
+              <span class="spinner hidden">⏳ Loading...</span>
+            </button>
+            <p>Should log to console + show spinner if valid</p>
+          </div>
+        </section>
+        <div id="messageBox" class="message-box hidden"></div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Templates -->
+  <template id="transactionRowTemplate">
+    <tr>
+      <td class="serial-col row-number"></td>
+      <td><input type="text" name="transactionId[]" class="table-input" placeholder="TX ID" /></td>
+      <td><input type="date" name="transactionDate[]" class="table-input" /></td>
+      <td><input type="time" name="transactionTime[]" class="table-input" /></td>
+      <td><input type="number" name="transactionAmount[]" class="table-input amount-input" step="0.01" /></td>
+      <td><button type="button" class="icon-btn delete-transaction">Delete</button></td>
+    </tr>
+  </template>
+
+  <template id="evidenceRowTemplate">
+    <tr>
+      <td class="serial-col row-number"></td>
+      <td><select name="evidenceType[]" class="table-input"><option value="">Type</option><option value="Screenshot">Screenshot</option></select></td>
+      <td><input type="text" name="evidenceDescription[]" class="table-input" placeholder="Desc" /></td>
+      <td><input type="file" name="evidenceFile[]" class="table-input" /></td>
+      <td><button type="button" class="icon-btn delete-evidence">Delete</button></td>
+    </tr>
+  </template>
+
+  <script src="Ai_User/static/script.js"></script>
+  <script>
+    console.log('🧪 Complete standalone test loaded');
+    
+    // Add default rows
+    addTransactionRow();
+    addEvidenceRow();
+    
+    // Test override
+    const originalSubmit = handleSubmit;
+    window.handleSubmit = function(e) {
+      console.log('🚀 TEST SUBMIT TRIGGERED!');
+      originalSubmit(e);
+    };
+    
+    document.getElementById('complaintForm').onsubmit = (e) => {
+      console.log('✅ FORM SUBMIT FIRED!');
+      setTimeout(() => alert('SUCCESS! Submit button WORKS. Backend next.'), 500);
+    };
+  </script>
+</body>
+</html>

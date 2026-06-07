@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Online Shopping Fraud Complaint</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='shopping_fraud.css') }}">
+
+</head>
+<body>
+
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+<div id="flashMessage" class="flash-message">
+    {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>🛒 Online Shopping Fraud Complaint</h1>
+
+        <p class="subtitle">
+            Report fake shopping websites, payment fraud,
+            product scams, delivery fraud and online seller cheating.
+        </p>
+
+        <div class="warning-box">
+            ⚠ Keep invoices, payment screenshots and seller chat proofs safely.
+        </div>
+
+        <form action="/shopping_fraud" method="POST" enctype="multipart/form-data">
+
+            <!-- USER DETAILS -->
+
+            <h2 class="section-title">Complainant Information</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="text" name="mobile" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <input type="text" name="state">
+                </div>
+
+            </div>
+
+            <!-- FRAUD DETAILS -->
+
+            <h2 class="section-title">Fraud Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Shopping Website / App</label>
+                    <input type="text" name="website">
+                </div>
+
+                <div class="input-group">
+                    <label>Order ID</label>
+                    <input type="text" name="order_id">
+                </div>
+
+                <div class="input-group">
+                    <label>Fraud Amount</label>
+                    <input type="number" name="amount">
+                </div>
+
+                <div class="input-group">
+                    <label>Payment Method</label>
+
+                    <select name="payment_method">
+
+                        <option>UPI</option>
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Net Banking</option>
+                        <option>Wallet</option>
+                        <option>Cash On Delivery</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Fraud Date</label>
+                    <input type="date" name="fraud_date">
+                </div>
+
+                <div class="input-group">
+                    <label>Seller Contact Number</label>
+                    <input type="text" name="seller_mobile">
+                </div>
+
+                <div class="input-group full">
+                    <label>Complaint Description</label>
+
+                    <textarea
+                        rows="7"
+                        name="description"
+                        placeholder="Describe the fraud in detail..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- EVIDENCE -->
+
+            <h2 class="section-title">Evidence Upload</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Upload Payment Screenshot</label>
+                    <input type="file" name="payment_proof">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Product Screenshot</label>
+                    <input type="file" name="product_image">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Chat Evidence</label>
+                    <input type="file" name="chat_proof">
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<script>
+
+setTimeout(() => {
+
+    const flash = document.getElementById("flashMessage");
+
+    if(flash){
+        flash.style.display = "none";
+    }
+
+}, 3000);
+
+</script>
+</body>
+</html>

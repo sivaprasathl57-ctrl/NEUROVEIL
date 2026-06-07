@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cases Folder View</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='case.css') }}">
+</head>
+<body>
+
+<h1>📁 Complaint Case Folders</h1>
+
+<div class="folder-grid">
+  {% for item in complaints %}
+  <div class="folder" onclick="openFolder('{{ item[0] }}')">
+    <div class="folder-top"></div>
+
+    <div class="folder-body">
+      <div class="folder-icon-wrap">
+        <div class="folder-icon">📁</div>
+
+        {% if item[4] == False %}
+          <span class="unread-dot"></span>
+        {% endif %}
+      </div>
+
+      <h3>
+        CASE-{{ item[0] }}
+        {% if item[4] == False %}
+          <span class="new-label">NEW</span>
+        {% endif %}
+      </h3>
+
+      <p class="title">{{ item[1] }}</p>
+      <p class="victim">👤 {{ item[2] }}</p>
+
+      <span class="risk {{ item[3]|lower }}">
+        {{ item[3] }}
+      </span>
+
+      <button class="delete-btn" onclick="deleteCase(event, '{{ item[0] }}')">
+        Delete
+      </button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+function openFolder(id) {
+  window.location.href = "/folder/" + id;
+}
+
+async function deleteCase(event, id) {
+  event.stopPropagation();
+
+  if (!confirm("Are you sure you want to delete CASE-" + id + "?")) {
+    return;
+  }
+
+  const res = await fetch("/delete-case/" + id, {
+    method: "POST"
+  });
+
+  if (res.ok) {
+    location.reload();
+  } else {
+    alert("Failed to delete case");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Complaint Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='complaint_copy.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Advanced Complaint Registration</h1>
+        <p class="subtitle">
+          Real-world complaint form with multi-transaction entry, multiple evidence records, and direct backend PDF generation.
+        </p>
+      </div>
+
+      <div class="top-actions">
+        <div id="saveStatus" class="save-status">No draft saved</div>
+        <button type="button" id="saveDraftBtn" class="btn btn-secondary">Save Draft</button>
+        <button type="button" id="clearDraftBtn" class="btn btn-danger">Clear Draft</button>
+      </div>
+    </header>
+
+    <main class="main-card">
+      <form
+        id="complaintForm"
+        method="POST"
+        action="/generate-pdf"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <!-- Victim Section -->
+        <section class="section-card">
+          <div class="section-head">
+            <h2>Victim Details</h2>
+          </div>
+
+          <div class="grid two-col">
+            <div class="form-group">
+              <label for="victimName">Victim Full Name</label>
+              <input type="text" id="victimName" name="victimName" required />
+            </div>
+
+            <div class="form-group">
+              <label for="victimPhone">Victim Phone Number</label>
+              <input type="tel" id="victimPhone" name="victimPhone" placeholder="10-digit mobile number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="victimAltPhone">Alternate Phone Number</label>
+              <input type="tel" id="victimAltPhone" name="victimAltPhone" />
+            </div>
+
+            <div class="form-group">
+              <label for="victimEmail">Victim Email</label>
+              <input type="email" id="victimEmail" name="victimEmail" />
+            </div>
+
+            <div class="form-group full">
+              <label for="victimAddress">Victim Address</label>
+              <textarea id="victimAddress" name="victimAddress" rows="3"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Incident Section -->
+        <section class="section-card">
+          <div class="section-head">
+            <h2>Incident Details</h2>
+          </div>
+
+          <div class="grid two-col">
+            <div class="form-group">
+              <label for="complaintTitle">Complaint Title</label>
+              <input type="text" id="complaintTitle" name="complaintTitle" required />
+            </div>
+
+            <div class="form-group">
+              <label for="crimeCategory">Crime Category</label>
+              <select id="crimeCategory" name="crimeCategory" required>
+                <option value="">Select category</option>
+                <option value="UPI Fraud">UPI Fraud</option>
+                <option value="Bank Fraud">Bank Fraud</option>
+                <option value="Phishing">Phishing</option>
+                <option value="Identity Theft">Identity Theft</option>
+                <option value="Social Media Fraud">Social Media Fraud</option>
+                <option value="Loan App Fraud">Loan App Fraud</option>
+                <option value="Investment Fraud">Investment Fraud</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="incidentDate">Primary Incident Date</label>
+              <input type="date" id="incidentDate" name="incidentDate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="incidentTime">Primary Incident Time</label>
+              <input type="time" id="incidentTime" name="incidentTime" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="incidentDescription">Incident Description</label>
+              <textarea id="incidentDescription" name="incidentDescription" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="suspectDetails">Suspect / Fraudster Details</label>
+              <textarea
+                id="suspectDetails"
+                name="suspectDetails"
+                rows="4"
+                placeholder="Phone number, UPI ID, bank account, email, website, social profile, etc."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transactions Table -->
+        <section class="section-card">
+          <div class="section-head space-between">
+            <div>
+              <h2>Transaction Details</h2>
+              <p class="section-note">Add all payment attempts in one table for easy handling.</p>
+            </div>
+            <button type="button" id="addTransactionBtn" class="btn btn-primary">+ Add Transaction</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table" id="transactionTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Transaction ID</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Amount</th>
+                  <th>Sender Bank</th>
+                  <th>Sender Account No.</th>
+                  <th>Receiver Bank / UPI</th>
+                  <th>Mode</th>
+                  <th>Remark</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="transactionTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="totals-bar">
+            <div><strong>Total Transactions:</strong> <span id="transactionCount">0</span></div>
+            <div><strong>Total Amount:</strong> ₹ <span id="totalAmount">0.00</span></div>
+          </div>
+        </section>
+
+        <!-- Evidence Table -->
+        <section class="section-card">
+          <div class="section-head space-between">
+            <div>
+              <h2>Evidence Details</h2>
+              <p class="section-note">Add many evidence records for the same complaint.</p>
+            </div>
+            <button type="button" id="addEvidenceBtn" class="btn btn-primary">+ Add Evidence</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table" id="evidenceTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Evidence Type</th>
+                  <th>Linked Transaction ID</th>
+                  <th>Description</th>
+                  <th>File</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="helper-text">
+            Note: selected files cannot be restored after page refresh for browser security reasons. Text fields will be restored from draft.
+          </div>
+        </section>
+
+        <!-- Review -->
+        <section class="section-card">
+          <div class="section-head space-between">
+            <div>
+              <h2>Review Summary</h2>
+              <p class="section-note">Generate a quick summary before submit.</p>
+            </div>
+            <button type="button" id="previewBtn" class="btn btn-secondary">Refresh Review</button>
+          </div>
+
+          <div id="reviewBox" class="review-box">
+            Review summary will appear here.
+          </div>
+        </section>
+
+        <!-- Declaration -->
+        <section class="section-card">
+          <label class="check-row">
+            <input type="checkbox" id="declaration" name="declaration" />
+            <span>I confirm that the details provided are true to the best of my knowledge.</span>
+          </label>
+        </section>
+
+        <!-- Actions -->
+        <section class="form-actions">
+          <button type="button" id="resetFormBtn" class="btn btn-secondary">Reset Form</button>
+          <button type="submit" class="btn btn-submit">Submit & Download PDF</button>
+        </section>
+
+        <div id="messageBox" class="message-box hidden"></div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Transaction Row Template -->
+  <template id="transactionRowTemplate">
+    <tr class="transaction-row">
+      <td class="serial-col row-number"></td>
+      <td>
+        <input type="text" name="transactionId[]" class="table-input tx-id" placeholder="Transaction ID" />
+      </td>
+      <td>
+        <input type="date" name="transactionDate[]" class="table-input" />
+      </td>
+      <td>
+        <input type="time" name="transactionTime[]" class="table-input" />
+      </td>
+      <td>
+        <input type="number" name="transactionAmount[]" class="table-input amount-input" min="0" step="0.01" placeholder="0.00" />
+      </td>
+      <td>
+        <input type="text" name="senderBank[]" class="table-input" placeholder="Sender Bank" />
+      </td>
+      <td>
+        <input type="text" name="senderAccount[]" class="table-input" placeholder="Sender Account No." />
+      </td>
+      <td>
+        <input type="text" name="receiverBank[]" class="table-input" placeholder="Receiver Bank / UPI" />
+      </td>
+      <td>
+        <select name="transactionMode[]" class="table-input">
+          <option value="">Mode</option>
+          <option value="UPI">UPI</option>
+          <option value="IMPS">IMPS</option>
+          <option value="NEFT">NEFT</option>
+          <option value="RTGS">RTGS</option>
+          <option value="Card">Card</option>
+          <option value="Wallet">Wallet</option>
+          <option value="Other">Other</option>
+        </select>
+      </td>
+<td>
+        <input type="text" name="transactionRemark[]" class="table-input" placeholder="Remark" />
+      </td>
+      <td class="action-col">
+        <button type="button" class="icon-btn delete-transaction">Delete</button>
+      </td>
+    </tr>
+  </template>
+
+  <!-- Evidence Row Template -->
+  <template id="evidenceRowTemplate">
+    <tr class="evidence-row">
+      <td class="serial-col row-number"></td>
+      <td>
+        <select name="evidenceType[]" class="table-input">
+          <option value="">Select</option>
+          <option value="Screenshot">Screenshot</option>
+          <option value="Bank Slip">Bank Slip</option>
+          <option value="Chat">Chat</option>
+          <option value="Call Log">Call Log</option>
+          <option value="Email">Email</option>
+          <option value="Document">Document</option>
+          <option value="Video">Video</option>
+          <option value="Audio">Audio</option>
+          <option value="Other">Other</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" name="evidenceTransactionRef[]" class="table-input" placeholder="Transaction ID" />
+      </td>
+      <td>
+        <input type="text" name="evidenceDescription[]" class="table-input" placeholder="Evidence description" />
+      </td>
+<td>
+        <input type="file" name="evidenceFile[]" class="table-input file-input" />
+      </td>
+      <td class="action-col">
+        <button type="button" class="icon-btn delete-evidence">Delete</button>
+      </td>
+    </tr>
+  </template>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
