@@ -545,19 +545,18 @@ AI Assistant:
 • Provide transaction references
 • Estimated Fraud Type:
   Investment Scam
+---
 
 🌍 Multi-Language Support
+
 Supports complaint filing in multiple languages.
 
 Examples:
 
-English
-
-Tamil
-
-Hindi
-
-Malayalam
+-> English
+-> Tamil
+-> Hindi
+-> Malayalam
 
 Features:
 
@@ -565,7 +564,7 @@ Real-time language switching
 AI-powered translation
 Native language complaint support
 Multi-language investigation summaries
-
+---
 ⚡ Instant Complaint Generation
 
 Users can instantly generate and download:
@@ -576,7 +575,7 @@ Evidence Report
 Case Timeline
 Case Reference Document
 Available in a single click.
-
+---
 💾 Auto Save & Draft Recovery
 
 The platform automatically saves progress.
@@ -587,7 +586,7 @@ Prevents data loss
 Draft recovery
 Resume complaint anytime
 Auto synchronization
-
+---
 📂 Smart Evidence Upload
 
 Supports:
@@ -606,7 +605,7 @@ Transaction IDs
 Phone numbers
 URLs
 Wallet addresses
-
+---
 📊 Real-Time Complaint Tracking
 
 Users can track investigation progress in real time.
@@ -639,7 +638,7 @@ Officer actions
 Approval status
 Recovery progress
 This creates complete transparency throughout the investigation lifecycle.
-
+---
 🔔 Smart Notifications
 
 Receive updates through:
@@ -656,7 +655,7 @@ Investigation started
 Additional evidence requested
 Recovery update available
 Investigation completed
-
+---
 📈 Complaint Progress Dashboard
 
 Users can monitor:
@@ -668,7 +667,7 @@ Recovery Tracking
 Submitted Evidence
 Timeline Events
 All from a centralized dashboard.
-
+---
 🎨 Modern User Experience
 
 Designed with a professional and intuitive interface.
@@ -683,7 +682,7 @@ Clean Dashboard
 Interactive Timelines
 Professional Investigation View
 Minimal Learning Curve
-
+---
 🔒 Privacy & Security
 
 User information is protected through:
@@ -693,7 +692,7 @@ Secure Evidence Storage
 Role-Based Access Control
 Audit Logging
 Privacy Protection Measures
-
+---
 🎯 Citizen-Centric Design
 
 NEUROVEIL aims to provide a seamless experience where citizens can:
