@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+        <div id="flashMessage" class="flash-message">
+            {{ messages[0] }}
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<section class="contact-container">
+
+    <div class="info">
+        <h2>Reach Us</h2>
+        <p>Email: support@cyberportal.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Location: India</p>
+    </div>
+
+    <form class="form" action = "/contact us" method = "POST">
+        <input type="text" name = "name" placeholder="Your Name" required>
+        <input type="email" name = "email" placeholder="Your Email" required>
+        <textarea name = "message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+</section>
+<script>
+
+setTimeout(() => {
+
+    const flash = document.getElementById("flashMessage");
+
+    if(flash){
+        flash.style.display = "none";
+    }
+
+}, 3000);
+
+</script>
+</body>
+</html>

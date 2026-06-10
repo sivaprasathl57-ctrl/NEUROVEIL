@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #08111f, #0c1b33);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: rgba(10, 20, 40, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff9f1c;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #d7e3ff;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ff9f1c;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 5%;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.tag {
+  color: #ff9f1c;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #ff9f1c;
+}
+
+.subtitle {
+  max-width: 600px;
+  color: #b9c7e6;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.btn {
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #ff9f1c;
+  color: #111;
+}
+
+.secondary {
+  border: 1px solid #2f4f8f;
+  background: rgba(20, 35, 70, 0.8);
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stats strong {
+  font-size: 1.7rem;
+  color: #ff9f1c;
+}
+
+.stats span {
+  color: #a9bad8;
+  font-size: 0.9rem;
+}
+
+.hero-shield {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shield-circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 77, 145, 0.45), rgba(8, 17, 31, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 20px rgba(255, 159, 28, 0.05);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.shield {
+  font-size: 6rem;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.section {
+  padding: 80px 5%;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #b9c7e6;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(16, 28, 53, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #ff9f1c;
+}
+
+.card h3 {
+  color: #ff9f1c;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #cbd7ef;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.card button,
+.quiz-btns button {
+  border: none;
+  padding: 10px 16px;
+  background: #ff9f1c;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tips-box,
+.quiz-box {
+  background: rgba(16, 28, 53, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.tips-box ul {
+  padding-left: 20px;
+  color: #dce6f7;
+  line-height: 2;
+}
+
+.quiz-box {
+  max-width: 650px;
+}
+
+.quiz-box p {
+  margin-bottom: 18px;
+  color: #dce6f7;
+  font-size: 1.05rem;
+}
+
+.quiz-btns {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+#result {
+  font-weight: bold;
+  color: #ff9f1c;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 10px;
+  background: rgba(10, 20, 40, 0.95);
+  color: #a9bad8;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+
+  .hero-btns,
+  .quiz-btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .nav {
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

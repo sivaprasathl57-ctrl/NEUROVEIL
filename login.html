@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - National Cyber Crime Reporting Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/auth.css">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy2: #112240;
+      --blue: #1a56db;
+      --blue2: #1e40af;
+      --saffron: #FF6B00;
+      --saffron2: #FF9500;
+      --white: #ffffff;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN POPUP MODAL -->
+<div id="modal-overlay" style="display:flex;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
+  <div id="modal-box" style="background:#112240;border:1px solid rgba(26,86,219,0.35);border-radius:20px;width:400px;max-width:90vw;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.7);animation:slide-up 0.25s ease;">
+    <div style="background:linear-gradient(135deg,rgba(26,86,219,0.25),rgba(255,107,0,0.1));padding:20px 24px 16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="34" viewBox="0 0 100 120" style="flex-shrink:0"><rect x="15" y="90" width="70" height="6" rx="2" fill="#C8922A"/><circle cx="50" cy="93" r="5" fill="none" stroke="#1a3a8f" stroke-width="1.5"/><circle cx="50" cy="93" r="1.5" fill="#1a3a8f"/><line x1="50" y1="88" x2="50" y2="98" stroke="#1a3a8f" stroke-width="1"/><line x1="45" y1="93" x2="55" y2="93" stroke="#1a3a8f" stroke-width="1"/><ellipse cx="50" cy="72" rx="16" ry="6" fill="#B8820A"/><ellipse cx="36" cy="68" rx="9" ry="7" fill="#C8922A"/><ellipse cx="36" cy="62" rx="6" ry="5" fill="#C8922A"/><ellipse cx="64" cy="68" rx="9" ry="7" fill="#C8922A"/><ellipse cx="64" cy="62" rx="6" ry="5" fill="#C8922A"/><ellipse cx="50" cy="65" rx="7" ry="8" fill="#C8922A"/></svg>
+        <div id="modal-title" style="font-size:16px;font-weight:700;color:#fff;">🔐 Login to Your Account</div>
+      </div>
+      <button onclick="closeModal()" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;line-height:1;">✕</button>
+    </div>
+    <div id="modal-body" style="padding:24px;">
+      <!-- LOGIN FORM -->
+      <form action="/login_accept" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+      
+        <div>
+          <label style="display:block;font-size:12px;color:#94a3b8;margin-bottom:6px;">Email Address</label>
+          <input type="email" name="email" required placeholder="your@email.com" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#fff;font-size:14px;outline:none;" onfocus="this.style.borderColor='#1a56db'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;color:#94a3b8;margin-bottom:6px;">Password</label>
+          <input type="password" name="password" required placeholder="Enter password" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#fff;font-size:14px;outline:none;" onfocus="this.style.borderColor='#1a56db'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;">
+          <label style="color:#94a3b8;display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="checkbox" style="width:14px;height:14px;"> Remember me
+          </label>
+          <a href="#" style="color:#1a56db;text-decoration:none;" onclick="loadPopup('forgot')">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" style="width:100%;padding:12px;background:linear-gradient(135deg,#1a56db,#1e40af);border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;">Login</button>
+         {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+        <div style="text-align:center;font-size:13px;color:#94a3b8;">
+          Don't have an account? <a href="/register" style="color:#ff6b00;text-decoration:none;font-weight:500;">Register here</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+function closeModal() {
+  window.location.href = '/';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+</script>
+
+</body>
+</html>

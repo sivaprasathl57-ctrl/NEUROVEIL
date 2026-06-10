@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Phishing Complaint Portal</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='phishing_complaint.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-container">
+
+        <h1>🎣 Phishing Complaint Form</h1>
+
+        <p class="subtitle">
+            Report phishing emails, fake banking websites,
+            OTP scams, malicious links and online impersonation attacks.
+        </p>
+
+        <div class="alert-box">
+            ⚠ Never share OTP, banking PIN or passwords with anyone.
+        </div>
+
+        <form action="/phishing_complaint" method="POST" enctype="multipart/form-data">
+
+            <!-- USER DETAILS -->
+
+            <h2 class="section-title">Complainant Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="text" name="mobile" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="input-group">
+                    <label>State</label>
+                    <input type="text" name="state">
+                </div>
+
+            </div>
+
+            <!-- INCIDENT DETAILS -->
+
+            <h2 class="section-title">Phishing Incident Details</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Fraud Type</label>
+
+                    <select name="fraud_type">
+
+                        <option>Email Phishing</option>
+                        <option>SMS Phishing</option>
+                        <option>Fake Banking Website</option>
+                        <option>OTP Scam</option>
+                        <option>Social Media Phishing</option>
+                        <option>Fake Job Scam</option>
+                        <option>Fake Lottery Scam</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+                    <label>Phishing Website URL</label>
+                    <input type="url" name="website">
+                </div>
+
+                <div class="input-group">
+                    <label>Suspect Email</label>
+                    <input type="email" name="suspect_email">
+                </div>
+
+                <div class="input-group">
+                    <label>Suspect Mobile Number</label>
+                    <input type="text" name="suspect_mobile">
+                </div>
+
+                <div class="input-group">
+                    <label>Fraud Amount</label>
+                    <input type="number" name="amount">
+                </div>
+
+                <div class="input-group">
+                    <label>Incident Date</label>
+                    <input type="date" name="incident_date">
+                </div>
+
+                <div class="input-group full">
+                    <label>Complaint Description</label>
+
+                    <textarea
+                        rows="7"
+                        name="description"
+                        placeholder="Explain the phishing incident clearly..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- EVIDENCE -->
+
+            <h2 class="section-title">Evidence Upload</h2>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>Upload Screenshot</label>
+                    <input type="file" name="screenshot">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Email Proof</label>
+                    <input type="file" name="email_proof">
+                </div>
+
+                <div class="input-group">
+                    <label>Upload Transaction Proof</label>
+                    <input type="file" name="transaction_proof">
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
